@@ -2,6 +2,8 @@
 
 This is an exercise in [Pyret](http://pyret.org/) used to explore [functional programming](https://dcic-world.org/2022-01-25/) and the [German Steckered Enigma Machine](https://www.cryptomuseum.com/crypto/enigma/working.htm).
 
+The [code](https://raw.githubusercontent.com/dcpetty/enigma/refs/heads/main/enigma.arr) is runnable on [code.pyret.org](https://code.pyret.org/editor#share=1mNCIIT5QN8EbMQGWt6AWdAeUvCoB73Hx&v=7f06509).
+
 ## What did I learn about [Pyret](http://pyret.org/)?
 
 - Using `example`s is a good technique for thinking through and prototyping a multifacted problem like `Enigma`.
@@ -56,4 +58,4 @@ This is an exercise in [Pyret](http://pyret.org/) used to explore [functional pr
 
 <hr>
 
-[&#128279; permalink](https://psb-david-petty.github.io/enigma) and [&#128297; repository](https://github.com/psb-david-petty/enigma) for this page.
+[&#128279; permalink](https://dcpetty.github.io/enigma) and [&#128297; repository](https://github.com/dcpetty/enigma) for this page.
