@@ -1,5 +1,5 @@
 #
-# German Steckered Enigma: https://psb-david-petty.github.io/enigma
+# German Steckered Enigma: https://dcpetty.github.io/enigma
 #
 
 include string-dict
