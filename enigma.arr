@@ -1,4 +1,3 @@
-use context essentials2021
 #
 # German Steckered Enigma: https://psb-david-petty.github.io/enigma
 #
@@ -45,7 +44,82 @@ examples:
   enigma([list: vi, vii, viii], ukw-b, 'xyz', plugboard([list: 'mo', 'nt', 'yp', ]), 'pqr')
     .encode(clean(ARGUMENT)) is clean(```
              vjkpq adksp nbwua phbsa bxdph qcpcs imlfp vwyyh svvbl xprfi ccjld wsqtb ggpxv oldpy oqdbm rzwvk wdtqp nqvkz nvyvq wijmd cgwms maxmr fzusf uuwms wqfuv njqmz pllpi gurig zayde thaka wajvr wxrwa wuryv rjgod qidkz zayyr jodke ceyci hcntv bwuqm hhpho epqvb vznik akyon mzurt jcpht wgytv mvvfy npioz koord ewzly ikhdn elweo ptgbw zvfyn igmab aefdc enenl ezmmx tlkpu ortgy rcbmm wfoso mucve qprdl ickrr vjpbl emzae cqkis vsenq ftqwg lyohx ppqxv bgxne pqqeg fvsle lizvr zykmk tyxcb kzdcx fekbr ubnjp rerin fzcyu pd```)
-end
+  # Multiple confirming rotor permutations with 'AAA' position.
+  enigma([list: i, ii, iii], ukw-a, 'AAA', plugboard(empty), 'aaa')
+    .encode(enigma([list: i, ii, iii], ukw-a, 'aaa', plugboard(empty), 'AAA')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: ii, iii, iv], ukw-a, 'AAA', plugboard(empty), 'aaa')
+    .encode(enigma([list: ii, iii, iv], ukw-a, 'AAA', plugboard(empty), 'aaa')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iii, iv, v], ukw-a, 'AAA', plugboard(empty), 'aaa')
+    .encode(enigma([list: iii, iv, v], ukw-a, 'AAA', plugboard(empty), 'aaa')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iv, v, vi], ukw-a, 'AAA', plugboard(empty), 'aaa')
+    .encode(enigma([list: iv, v, vi], ukw-a, 'AAA', plugboard(empty), 'aaa')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: v, vi, vii], ukw-a, 'AAA', plugboard(empty), 'aaa')
+    .encode(enigma([list: v, vi, vii], ukw-a, 'AAA', plugboard(empty), 'aaa')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: vi, vii, viii], ukw-a, 'AAA', plugboard(empty), 'aaa')
+    .encode(enigma([list: vi, vii, viii], ukw-a, 'AAA', plugboard(empty), 'aaa')
+      .encode('ENIGMA')) is 'ENIGMA'
+  # Multiple confirming rotor permutations with varying position.
+  enigma([list: i, ii, iii], ukw-a, 'ABC', plugboard(empty), 'xyz')
+    .encode(enigma([list: i, ii, iii], ukw-a, 'abc', plugboard(empty), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: ii, iii, iv], ukw-a, 'ABC', plugboard(empty), 'xyz')
+    .encode(enigma([list: ii, iii, iv], ukw-a, 'abc', plugboard(empty), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iii, iv, v], ukw-a, 'ABC', plugboard(empty), 'xyz')
+    .encode(enigma([list: iii, iv, v], ukw-a, 'abc', plugboard(empty), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iv, v, vi], ukw-a, 'ABC', plugboard(empty), 'xyz')
+    .encode(enigma([list: iv, v, vi], ukw-a, 'abc', plugboard(empty), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: v, vi, vii], ukw-a, 'ABC', plugboard(empty), 'xyz')
+    .encode(enigma([list: v, vi, vii], ukw-a, 'abc', plugboard(empty), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: vi, vii, viii], ukw-a, 'ABC', plugboard(empty), 'xyz')
+    .encode(enigma([list: vi, vii, viii], ukw-a, 'abc', plugboard(empty), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  # Multiple confirming rotor permutations with varying position and plugboards.
+  enigma([list: i, ii, iii], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: i, ii, iii], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ') 
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: ii, iii, iv], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: ii, iii, iv], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iii, iv, v], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: iii, iv, v], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iv, v, vi], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: iv, v, vi], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: v, vi, vii], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: v, vi, vii], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: vi, vii, viii], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: vi, vii, viii], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  # Multiple confirming rotor permutations with varying position and reflectors and plugboards.
+  enigma([list: i, ii, iii], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: i, ii, iii], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ') 
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: ii, iii, iv], ukw-b, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: ii, iii, iv], ukw-b, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iii, iv, v], ukw-c, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: iii, iv, v], ukw-c, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: iv, v, vi], ukw-a, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: iv, v, vi], ukw-a, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: v, vi, vii], ukw-b, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: v, vi, vii], ukw-b, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'
+  enigma([list: vi, vii, viii], ukw-c, 'ABC', plugboard([list: 'en', 'IG', 'ma', ]), 'xyz')
+    .encode(enigma([list: vi, vii, viii], ukw-c, 'abc', plugboard([list: 'EN', 'ig', 'MA', ]), 'XYZ')
+      .encode('ENIGMA')) is 'ENIGMA'end
 
 data Enigma:
   | enigma(rotors :: List<Rotor>, reflector :: Reflector, rings :: String, plugboard :: Plugboard, initial :: String) with:
@@ -235,14 +309,14 @@ fun get-notch(rotor):
   ]
   notches.get-value(string-to-upper(rotor))
 where:
-  get-notch('I')    is 'Q'
-  get-notch('ii')   is 'E'
-  get-notch('III')  is 'V'
-  get-notch('iv')   is 'J'
-  get-notch('V')    is 'Z'
-  get-notch('vi')   is 'MZ'
-  get-notch('VII')  is 'MZ'
-  get-notch('viii') is 'MZ'
+  get-notch('i')    is 'Q'
+  get-notch('II')   is 'E'
+  get-notch('iii')  is 'V'
+  get-notch('IV')   is 'J'
+  get-notch('v')    is 'Z'
+  get-notch('VI')   is 'MZ'
+  get-notch('vii')  is 'MZ'
+  get-notch('VIII') is 'MZ'
 end
 
 fun get-reflector(reflector):
